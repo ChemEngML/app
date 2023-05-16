@@ -8,7 +8,7 @@ Original file is located at
 """
 
 # Import necessary libraries
-pip install pycaret full 
+! pip install pycaret full 
 import pycaret
 from pycaret.regression import *
 import pandas as pd
