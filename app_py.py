@@ -1,7 +1,6 @@
 
 
 # Import necessary libraries
- 
 import pycaret
 from pycaret.regression import predict_model, load_model
 import pandas as pd
@@ -9,32 +8,21 @@ import streamlit as st
 import numpy as np
 
 # Set page configuration
-st.set_page_config(page_title="Permeate Water Predictor", page_icon="https://cdn-icons-png.flaticon.com/512/3105/3105807.png")
+st.set_page_config(page_title="FO Performance Predictor", page_icon="3105807.png")
 st.image("Desalination_hero.width-2000.jpg", width = 1000)
+
+# Import machine learning model
 model = load_model('GradientBoostingRegressor')
 
 # Import dataset & choosing desired parameters to analyze
 df = pd.read_csv("Database.csv")
 
-# Refining the dataset removing inputs with very hitg correlation
-#df = df[['Micro Pollutant', 'Initial Concentration of MP (mg/L)', 'Compound MW (g/mol)', 'Compound Charge', 'Initial FS pH', 'Water Flux, Jw (LMH)', 'Type of MB', 'MB Contact Angle (°)', 'Draw Solution', 'DS MW (g mol-1)', 'DS Concentration (M)', 'Operating Time (h)', 'Cross Flow Velocity (cm/s)','Temperature (⁰C)', 'Removal Rate (%)']] #'MP Category','Reverse Salt Flux, Js (gMH)'
-
-# Setting up the model by choosing water flux (Jw) as the prediction target
-
-#setup(data = df,target = 'Water Flux, Jw (LMH)',session_id = 123)
-
-
-
-# Creating the ML model based on best models compared above: Gradient Boosting Regress
-#gbr=create_model('gbr')
-
-
+# Defining app's characteristics
 def app(): 
     st.title('Water Flux (LMH) Predictor')
     st.write('Welcome to my web app!')
     st.write('Please input your values for the following features:')
 
-   
     MP_Type = df["Micro Pollutant"].unique()
     MB_Type = df["Type of MB"].unique()
     DS_Type = df["Draw Solution"].unique()
@@ -54,9 +42,8 @@ def app():
     Temp = st.slider("Temperature (⁰C)", 0.0, 40.0, step=0.5)
     Rejection = st.slider("Rejection Rate (%)", 0, 100)
 
-    def predict(): 
-	#prediction=""        
 # Perform the prediction based on the user input
+    def predict():      
         input_data = {
             'Micro Pollutant': MP,
             'Type of MB': MB,
