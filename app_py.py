@@ -8,7 +8,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 
-st.beta_set_page_config(page_title="My Web App", page_icon="🌐", layout="wide", page_header="image.png")
+st.set_page_config(page_title="Permeate Water Predictor", page_icon="🌐", layout="wide", page_header="image.png")
 
 model = load_model('GradientBoostingRegressor')
 
