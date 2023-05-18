@@ -8,8 +8,9 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 
-st.set_page_config(page_title="Permeate Water Predictor", page_icon="🌐", layout="wide", page_header="image.png")
-
+# Set page configuration
+st.set_page_config(page_title="Permeate Water Predictor", page_icon="https://cdn-icons-png.flaticon.com/512/3105/3105807.png")
+st.image("Desalination_hero.width-2000.jpg", width = 1000)
 model = load_model('GradientBoostingRegressor')
 
 # Import dataset & choosing desired parameters to analyze
