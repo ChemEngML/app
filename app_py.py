@@ -68,6 +68,13 @@ def app():
 
     trigger = st.button('Predict', on_click=predict)
 
+# Remove made by streamlit footer
+hide_menu_style="""
+	<style>
+	footer{visibility:hidden;}
+	</style>
+	"""
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 # Run Streamlit app
 if __name__ == '__main__':
     app()
