@@ -68,6 +68,14 @@ def app():
 
     trigger = st.button('Predict', on_click=predict)
 
+# GitHub & LinkedIn URL
+
+#link = '[GitHub](https://github.com/ChemEngML)'
+#st.markdown(link, unsafe_allow_html=True)
+
+link2 = '[LinkedIn](https://www.linkedin.com/in/mehryar-jafari/)'
+st.markdown(link2, unsafe_allow_html=True)
+
 # Remove made by streamlit footer
 hide_menu_style="""
 	<style>
