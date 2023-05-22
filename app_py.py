@@ -19,9 +19,9 @@ df = pd.read_csv("Database.csv")
 
 # Defining app's characteristics
 def app(): 
-    st.title('Water Flux (LMH) Predictor')
-    st.write('Welcome to my web app!')
-    st.write('Please input your values for the following features:')
+    st.title('💦 Water Flux (LMH) Predictor 💦')
+    st.header('Welcome to my web app!')
+    st.subheader('Please input your values for the following features:')
 
     MP_Type = df["Micro Pollutant"].unique()
     MB_Type = df["Type of MB"].unique()
@@ -33,12 +33,12 @@ def app():
     MP_MW = st.number_input("MP Molecular Weigth (g/mol):", 0.0, 1000.0, format="%.2f")
     Charge = st.slider("MP Charge:", -1, 1)
     FS_pH = st.slider("FS pH:", 0.0, 14.0, step=0.05)
-    Contact_angle = st.number_input("MB Contact Angle (°):", 0.0, 180.0, format="%.2f")
+    Contact_angle = st.number_input("MB Contact Angle (°):", 0.0, 110.0, format="%.2f")
     DS = st.selectbox("Draw Solute:", DS_Type)
     DS_MW = st.number_input("DS Molecular Weigth (g/mol):", 0, 999)
     DS_Conc = st.number_input("DS Concentration (M):", 0, 99)
     Op_Time = st.number_input("Operation Time (h):", 0, 72)
-    Velocity = st.number_input("Flow Velocity (cm/s):", 0.0, 50.0, format="%.2f")
+    Velocity = st.number_input("Cross-Flow Velocity (cm/s):", 0.0, 50.0, format="%.2f")
     Temp = st.slider("Temperature (⁰C)", 0.0, 40.0, step=0.5)
     Rejection = st.slider("Rejection Rate (%)", 0, 100)
 
