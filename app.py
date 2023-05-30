@@ -64,6 +64,7 @@ def app():
         input_df = pd.DataFrame([input_data])
 #if st.button("Predict"):
         prediction = predict_model(model, input_df)
+	st.markdown('___')
         st.write('The predicted water flux is:', prediction)
 
     trigger = st.button('Predict', on_click=predict)
