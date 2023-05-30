@@ -67,7 +67,7 @@ def app():
 #st.markdown("---")
         st.write("The predicted water flux is:", {prediction})
 
-    trigger = st.button(Predict', on_click=predict)
+    trigger = st.button('Predict', on_click=predict)
 
 # Hub & LinkedIn URL
 
