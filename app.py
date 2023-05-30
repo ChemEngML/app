@@ -65,7 +65,7 @@ def app():
 #if st.button("Predict"):
         prediction = predict_model(model, input_df)
 #st.markdown("---")
-        st.write("The predicted water flux is:", prediction['Label'].values[0])
+        st.write("The predicted water flux is:", prediction['Water Flux (Jw), LMH'].values[0])
 
     trigger = st.button('Predict', on_click=predict)
 
