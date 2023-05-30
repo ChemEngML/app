@@ -65,7 +65,18 @@ def app():
 #if st.button("Predict"):
         prediction = predict_model(model, input_df)
 #st.markdown("---")
-        st.write("The predicted water flux is:", prediction['Water Flux (Jw), LMH'].values[0])
+        st.write("The predicted water flux is:", prediction)
+	
+# Inspect predict and find suitable column to display
+
+def predict():
+    input_data = {
+        # input data dictionary remains the same
+    }
+
+    input_df = pd.DataFrame([input_data])
+    prediction = predict_model(model, input_df)
+    st.write(prediction)
 
     trigger = st.button('Predict', on_click=predict)
 
