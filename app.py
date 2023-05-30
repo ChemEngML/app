@@ -9,7 +9,7 @@ import numpy as np
 
 # Set page configuration
 st.set_page_config(page_title="FO Performance Predictor", page_icon="3105807.png")
-st.image("Desalination_hero.width-2000.jpg", width = 700)
+st.image("Desalination_hero.width-2000.jpg", width = 600)
 
 # Import machine learning model
 model = load_model('GradientBoostingRegressor')
@@ -68,7 +68,7 @@ def app():
 
     trigger = st.button('Predict', on_click=predict)
 
-# GitHub & LinkedIn URL
+# Hub & LinkedIn URL
 
 #link = '[GitHub](https://github.com/ChemEngML)'
 #st.markdown(link, unsafe_allow_html=True)
