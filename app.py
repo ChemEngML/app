@@ -20,7 +20,7 @@ df = pd.read_csv("Database.csv")
 # Defining app's characteristics
 def app(): 
     st.title('💦🧠 Mem-brain 🧠💦')
-    st.header('Welcome to our web app!')
+    st.header('Water flux (Jw) Predictor')
     st.subheader('Please enter your input values:')
 
     MP_Type = df["Micro Pollutant"].unique()
