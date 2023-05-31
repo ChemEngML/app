@@ -62,7 +62,7 @@ def app():
         }
 
         input_df = pd.DataFrame([input_data])
-#if st.button("Predict"):
+if st.button("Predict"):
         prediction = predict_model(model, input_df)
 #st.markdown("---")
         st.write("The predicted water flux is:", prediction)
