@@ -66,7 +66,7 @@ def app():
         prediction = predict_model(model, input_df)
 #st.markdown("---")
         st.write("The predicted water flux is:", prediction)
-	trigger = st.button('Predict', on_click=predict)
+trigger = st.button('Predict', on_click=predict)
 # Inspect predict and find suitable column to display
 
 #def predict():
