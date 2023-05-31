@@ -19,7 +19,7 @@ df = pd.read_csv("Database.csv")
 
 # Defining app's characteristics
 def app(): 
-    st.title('💦🧠 Mem-brain 🧠💦')
+    st.title('🌊 Mem-brain 🧠')
     st.header('Water flux (Jw) Predictor')
     st.subheader('⬅️ Please enter your input values from the sidebar')
 
