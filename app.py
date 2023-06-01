@@ -14,31 +14,6 @@ model = load_model('GradientBoostingRegressor')
 # Import dataset & choosing desired parameters to analyze
 df = pd.read_csv("Database.csv")
 
-
-    
-# Define the predict function
-def predict():
-    input_data = {
-        'Micro Pollutant': MP,
-        'Type of MB': MB,
-        'Initial Concentration of MP (mg/L)': MP_Conc,
-        'Compound MW (g/mol)': MP_MW,
-        'Compound Charge': Charge,
-        'Initial FS pH': FS_pH,
-        'MB Contact Angle (°)': Contact_angle,
-        'Draw Solution': DS,
-        'DS MW (g mol-1)': DS_MW,
-        'DS Concentration (M)': DS_Conc,
-        'Operating Time (h)': Op_Time,
-        'Cross Flow Velocity (cm/s)': Velocity,
-        'Temperature (⁰C)': Temp,
-        'Removal Rate (%)': Rejection
-    }
-
-    input_df = pd.DataFrame([input_data])
-    prediction = predict_model(model, input_df)
-    st.write("The predicted water flux is:", prediction)
-
 # Defining app's characteristics
 def app():
     st.title('🌊 Mem-brain 🧠')
@@ -64,6 +39,28 @@ def app():
     Temp = st.sidebar.slider("Temperature (⁰C)", 0.0, 40.0, step=0.5)
     Rejection = st.sidebar.slider("Rejection Rate (%)", 0, 100)
 
+    # Define the predict function
+def predict():
+    input_data = {
+        'Micro Pollutant': MP,
+        'Type of MB': MB,
+        'Initial Concentration of MP (mg/L)': MP_Conc,
+        'Compound MW (g/mol)': MP_MW,
+        'Compound Charge': Charge,
+        'Initial FS pH': FS_pH,
+        'MB Contact Angle (°)': Contact_angle,
+        'Draw Solution': DS,
+        'DS MW (g mol-1)': DS_MW,
+        'DS Concentration (M)': DS_Conc,
+        'Operating Time (h)': Op_Time,
+        'Cross Flow Velocity (cm/s)': Velocity,
+        'Temperature (⁰C)': Temp,
+        'Removal Rate (%)': Rejection
+    }
+
+    input_df = pd.DataFrame([input_data])
+    prediction = predict_model(model, input_df)
+    st.write("The predicted water flux is:", prediction)
 trigger = st.button('Predict', on_click=predict)
 
 # Hub & LinkedIn URL
