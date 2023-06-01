@@ -69,9 +69,9 @@ def app():
         st.write(f"<p style='font-size: 18px;'> {predicted_water_flux} LMH</p>", unsafe_allow_html=True)
 
 # GitHub & LinkedIn URL
-github_url = "https://github.com/ChemEngML"
-link = '[GitHub](https://github.com/ChemEngML)'
-st.markdown(link, unsafe_allow_html=True)
+#github_url = "https://github.com/ChemEngML"
+#link = '[GitHub](https://github.com/ChemEngML)'
+#st.markdown(link, unsafe_allow_html=True)
 
 link2 = '[LinkedIn](https://www.linkedin.com/in/mehryar-jafari/)'
 st.markdown(link2, unsafe_allow_html=True)
