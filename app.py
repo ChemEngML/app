@@ -62,7 +62,21 @@ def app():
     Temp = st.sidebar.slider("Temperature (⁰C)", 0.0, 40.0, step=0.5)
     Rejection = st.sidebar.slider("Rejection Rate (%)", 0, 100)
 
-   
+    # Add custom CSS
+    button_style = """
+    <style>
+    .big-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: #00008B; /* Dark blue hexadecimal color code */
+        color: white;
+}
+</style>
+"""
+
+# Render the custom CSS
+st.markdown(button_style, unsafe_allow_html=True)
     trigger = st.button('Predict', on_click=predict, args=(MP, MB, MP_Conc, MP_MW, Charge, FS_pH, Contact_angle, DS, DS_MW, DS_Conc, Op_Time, Velocity, Temp, Rejection))
 
 # Hub & LinkedIn URL
