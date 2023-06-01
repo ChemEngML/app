@@ -40,7 +40,7 @@ def app():
     Rejection = st.sidebar.slider("Rejection Rate (%)", 0, 100)
     
 # Define the predict function
-def predict():
+def predict(MP, MB, MP_Conc, MP_MW, Charge, FS_pH, Contact_angle, DS, DS_MW, DS_Conc, Op_Time, Velocity, Temp, Rejection):
     input_data = {
         'Micro Pollutant': MP,
         'Type of MB': MB,
