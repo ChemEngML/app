@@ -66,7 +66,7 @@ def app():
     if st.button('Predict', key='predict_button'):
         predicted_water_flux = predict(MP, MB, MP_Conc, MP_MW, Charge, FS_pH, Contact_angle, DS, DS_MW, DS_Conc, Op_Time, Velocity, Temp, Rejection)
         st.markdown("### Prediction Result:")
-        st.write(f"<p style='font-size: 18px;'>The predicted water flux is: {predicted_water_flux} LMH</p>", unsafe_allow_html=True)
+        st.write(f"<p style='font-size: 18px;'> {predicted_water_flux} LMH</p>", unsafe_allow_html=True)
 
 # Run the app
 app()
