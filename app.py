@@ -35,7 +35,7 @@ def predict(MP, MB, MP_Conc, MP_MW, Charge, FS_pH, Contact_angle, DS, DS_MW, DS_
 
     input_df = pd.DataFrame([input_data])
     prediction = predict_model(model, input_df)
-    st.write("The predicted water flux is:", prediction)
+    st.write("The predicted water flux is:", prediction['prediction_label'][0])
 
 # Defining app's characteristics
 def app():
