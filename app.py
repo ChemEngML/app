@@ -64,29 +64,6 @@ def app():
 
     trigger = st.button('Predict', on_click=predict, args=(MP, MB, MP_Conc, MP_MW, Charge, FS_pH, Contact_angle, DS, DS_MW, DS_Conc, Op_Time, Velocity, Temp, Rejection), help='Click to trigger prediction', key='predict_button')
 
-    # Add custom CSS
-button_style = """
-<style>
-.big-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 20px;
-    background-color: #00008B; /* Dark blue hexadecimal color code */
-    color: white;
-}
-</style>
-"""
-
-# Render the custom CSS
-st.markdown(button_style, unsafe_allow_html=True)
-
-# Create a custom button with dark blue background and white text
-button_html = """
-<div class="big-button">
-    <button>Predict</button>
-</div>
-"""
-st.markdown(button_html, unsafe_allow_html=True)
 # Hub & LinkedIn URL
 
 # link = '[GitHub](https://github.com/ChemEngML)'
