@@ -35,7 +35,8 @@ def predict(MP, MB, MP_Conc, MP_MW, Charge, FS_pH, Contact_angle, DS, DS_MW, DS_
 
     input_df = pd.DataFrame([input_data])
     prediction = predict_model(model, input_df)
-    st.write("The predicted water flux is:", prediction['prediction_label'][0], "LMH")
+    predicted_water_flux = prediction['prediction_label'][0]
+    return predicted_water_flux
 
 # Defining app's characteristics
 def app():
@@ -62,24 +63,10 @@ def app():
     Temp = st.sidebar.slider("Temperature (⁰C)", 0.0, 40.0, step=0.5)
     Rejection = st.sidebar.slider("Rejection Rate (%)", 0, 100)
 
-    trigger = st.button('Predict', on_click=predict, args=(MP, MB, MP_Conc, MP_MW, Charge, FS_pH, Contact_angle, DS, DS_MW, DS_Conc, Op_Time, Velocity, Temp, Rejection), help='Click to trigger prediction', key='predict_button')
+    if st.button('Predict', key='predict_button'):
+        predicted_water_flux = predict(MP, MB, MP_Conc, MP_MW, Charge, FS_pH, Contact_angle, DS, DS_MW, DS_Conc, Op_Time, Velocity, Temp, Rejection)
+        st.markdown("### Prediction Result:")
+        st.write(predicted_water_flux, "LMH")
 
-# Hub & LinkedIn URL
-
-# link = '[GitHub](https://github.com/ChemEngML)'
-# st.markdown(link, unsafe_allow_html=True)
-
-link2 = '[LinkedIn](https://www.linkedin.com/in/mehryar-jafari/)'
-st.markdown(link2, unsafe_allow_html=True)
-
-# Remove made by streamlit footer
-hide_menu_style = """
-    <style>
-    footer{visibility:hidden;}
-    </style>
-    """
-st.markdown(hide_menu_style, unsafe_allow_html=True)
-
-# Run Streamlit app
-if __name__ == '__main__':
-    app()
+# Run the app
+app()
