@@ -41,7 +41,7 @@ def app():
     Velocity = st.sidebar.number_input("Cross-Flow Velocity (cm/s):", 0.0, 50.0, format="%.2f")
     Temp = st.sidebar.slider("Temperature (⁰C)", 0.0, 40.0, step=0.5)
     Rejection = st.sidebar.slider("Rejection Rate (%)", 0, 100)
-
+trigger = st.button('Predict', on_click = predict)
 # Perform the prediction based on the user input
     def predict():      
         input_data = {
@@ -76,7 +76,7 @@ def app():
  #   input_df = pd.DataFrame([input_data])
   #  prediction = predict_model(model, input_df)
   #  st.write(prediction)
-trigger = st.button('Predict', on_click = predict)
+
 
 # Hub & LinkedIn URL
 
