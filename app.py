@@ -17,7 +17,7 @@ df = pd.read_csv("Database.csv")
 
     
 # Define the predict function
-def predict(MP, MB, MP_Conc, MP_MW, Charge, FS_pH, Contact_angle, DS, DS_MW, DS_Conc, Op_Time, Velocity, Temp, Rejection):
+def predict():
     input_data = {
         'Micro Pollutant': MP,
         'Type of MB': MB,
