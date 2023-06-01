@@ -77,7 +77,7 @@ button_style = """
 
 # Render the custom CSS
 st.markdown(button_style, unsafe_allow_html=True)
-    trigger = st.button('Predict', on_click=predict, args=(MP, MB, MP_Conc, MP_MW, Charge, FS_pH, Contact_angle, DS, DS_MW, DS_Conc, Op_Time, Velocity, Temp, Rejection))
+trigger = st.button('Predict', on_click=predict, args=(MP, MB, MP_Conc, MP_MW, Charge, FS_pH, Contact_angle, DS, DS_MW, DS_Conc, Op_Time, Velocity, Temp, Rejection))
 
 # Hub & LinkedIn URL
 
